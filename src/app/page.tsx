@@ -1,15 +1,6 @@
-import { MissCupcake } from "@/components/MissCupcake";
-import { DividerWaveSection } from "@/components/Sections/DividerWaveSection";
-import { TheSimpleSweetLife } from "@/components/TheSimplesSweetLife";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default function App() {
 
-  return (
-    <>
-      <MissCupcake></MissCupcake>
-      <DividerWaveSection bgTop="fill-red-100" bgBottom="fill-amber-100"></DividerWaveSection>
-      <TheSimpleSweetLife></TheSimpleSweetLife>
-    </>
-
-  );
+  return redirect('pt-BR')
 }
