@@ -19,11 +19,11 @@ export async function generateMetadata(
 }
 
 
-export default function HomeLocale({ params }: HomeLocaleProps) {
+export default function HomeLocale() {
   return (
     <>
       <Head>
-        <title>Miss Cupcake - {params.locale}</title>
+        <title>Miss Cupcake</title>
         <meta name="description" content="Delicious cupcakes and sweet treats for every occasion." />
       </Head>
       <MissCupcake></MissCupcake>
