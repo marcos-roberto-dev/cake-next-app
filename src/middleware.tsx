@@ -9,16 +9,16 @@ export default function middleware(req: NextRequest){
    const url = req.nextUrl.clone();
   const { pathname } = url;
 
-  const validLocales = ["pt-BR", "en-US"];
+  const validLocales = ["pt-br", "en-us"];
 
   if (pathname === "/") {
-    url.pathname = "/pt-BR";
+    url.pathname = "/pt-br";
     return NextResponse.redirect(url);
   }
 
   const pathLocale = pathname.split("/")[1];
   if (!validLocales.includes(pathLocale)) {
-    url.pathname = "/pt-BR";
+    url.pathname = "/pt-br";
     return NextResponse.redirect(url);
   }
 
