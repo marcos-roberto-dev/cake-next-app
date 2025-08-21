@@ -12,7 +12,7 @@ export function Products({ products }: ProductsProps) {
     <CustomSection bg={colors.lime[50]}>
       <h2 className="text-7xl font-wendy md:mb-[202px]">Make your day<br />a little sweeter</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-[90px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-[45px]">
         {
           products.map(product => (
             <div
@@ -27,9 +27,22 @@ export function Products({ products }: ProductsProps) {
               </div>
               <div className="w-full justify-center flex gap-4">
                 <div className="flex items-center gap-2 border border-purple-800 rounded-lg">
-                  <button className=" text-purple-800  w-8 h-8 flex items-center justify-center font-bold text-lg hover:bg-purple-200 transition">-</button>
-                  <span className="font-bold text-purple-800 text-lg">0</span>
-                  <button className=" text-purple-800  w-8 h-8 flex items-center justify-center font-bold text-lg hover:bg-purple-200 transition">+</button>
+                  <button className="cursor-pointer px-2 leading-none h-full  text-purple-800  flex items-center justify-center font-bold text-lg ">-</button>
+                  <input
+                    className="font-bold text-purple-800 text-lg w-10 h-8 text-center appearance-none"
+  type="number"
+  name=""
+  id=""
+  defaultValue={0}
+  min={0}
+  max={99}
+  maxLength={2}
+  style={{
+    // Remove os controles do input number nos navegadores Webkit (Chrome, Safari, Edge)
+    MozAppearance: 'textfield',
+    appearance: 'textfield',
+  }}
+                  />                  <button className="cursor-pointer px-2 leading-none h-full  text-purple-800  flex items-center justify-center font-bold text-lg ">+</button>
                 </div>
                 <button className="bg-purple-800 text-amber-100 text-sm font-bold h-[42px] px-6 rounded-lg uppercase tracking-wide hover:bg-purple-900 transition">Add to Cart</button>
               </div>

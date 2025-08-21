@@ -13,52 +13,13 @@
   font-family: var(--font-lato);
 }
 
-.section {
-  position: relative;
-  background: #fffcc0; /* cor da section */
-  padding: 120px 24px 80px;
-  overflow: hidden;
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-/* faixa superior que será recortada */
-.section::before{
-  content:"";
-  position:absolute; inset:0 0 auto 0;
-  height:200px;            /* altura da “faixa” */
-  background:#f6c7d2;      /* cor de cima (rosa) */
-  -webkit-mask: url(/wave-mask.svg) no-repeat top / 100% 100%;
-          mask: url(/wave-mask.svg) no-repeat top / 100% 100%;
-  mask-mode: luminance;    /* usa branco/preto */
-}
-
-.wave-section{
-  --top: #f6c7d2;      /* cor de cima (rosa) */
-  --bottom: #fffcc0;   /* cor de baixo (amarelo) */
-  position: relative;
-  background: var(--bottom);
-  padding: 160px 24px 80px;
-  overflow: hidden;
-}
-
-.wave-section .container{ max-width: 960px; margin: 0 auto; }
-
-/* faixa de cima com máscara */
-.wave-section::before{
-  content: "";
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: 200px;                 /* altura da onda */
-  background: var(--top);
-
-  /* usa o SVG como máscara (webkit + padrão) */
-  -webkit-mask: var(--wave) no-repeat 0 0 / 100% 100%;
-          mask: var(--wave) no-repeat 0 0 / 100% 100%;
-}
-
-/* data URI do SVG (path em branco e preserveAspectRatio=none) */
-.wave-section{
-  --wave: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">\
-<path fill="white" d="M0,288L21.8,288C43.6,288,87,288,131,245.3C174.5,203,218,117,262,101.3C305.5,85,349,139,393,176C436.4,213,480,235,524,250.7C567.3,267,611,277,655,288C698.2,299,742,309,785,309.3C829.1,309,873,299,916,277.3C960,256,1004,224,1047,224C1090.9,224,1135,256,1178,234.7C1221.8,213,1265,139,1309,106.7C1352.7,75,1396,85,1418,90.7L1440,96L1440,0L0,0Z"/>\
-</svg>');
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }

@@ -26,7 +26,7 @@ export function CustomHeader({
 
   return (
     <header className="bg-red-100 py-4 px-4 md:px-[126px] font-lato text-lg text-purple-800">
-      <nav className="flex justify-between">
+      <nav className="flex justify-between max-w-[1360px] mx-auto">
         <ul className="flex space-x-4">
           {links.map((link) => (
             <li key={link.path}>
