@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|images).*)"],
 };
 
 
 export default function middleware(req: NextRequest){
-   const url = req.nextUrl.clone();
+  const url = req.nextUrl.clone();
   const { pathname } = url;
 
   const validLocales = ["pt-br", "en-us"];

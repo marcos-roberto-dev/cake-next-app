@@ -4,19 +4,10 @@ import { usePathname } from "next/navigation"
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 const links = [
-  {
-    path: '/',
-    label: 'Shop' 
-  },
-  {
-    path: '/our-story',
-    label: 'Our Story'
-  },
-  {
-    path: '/why-miss-cupcake',
-    label: 'Why Miss Cupcake'
-  }
-]
+  { path: '/', label: 'Shop' },
+  { path: '/our-story', label: 'Our Story' },
+  { path: '/why-miss-cupcake', label: 'Why Miss Cupcake' }
+];
 
 export function CustomHeader({
   params,
@@ -25,12 +16,12 @@ export function CustomHeader({
 }>) {
   const pathname = usePathname();
 
-  const cleanPathname = pathname.replace(/^\/[a-z]{2}-[A-Z]{2}/, '');
+  // Remove o locale do início do pathname
+  const cleanPathname = pathname.replace(/^\/[a-z]{2}-[a-z]{2}/i, '') || '/';
 
   function loadActiveLinkClass(link: { path: string }) {
-    return (cleanPathname === '' && link.path === '/') || cleanPathname === link.path
-        ? 'font-bold'
-        : '';
+    // Compara o caminho limpo com o path do link
+    return cleanPathname === link.path ? 'font-bold' : '';
   }
 
   return (
@@ -41,7 +32,7 @@ export function CustomHeader({
             <li key={link.path}>
               <Link
                 href={`/${params.locale}${link.path}`}
-                className={` ${loadActiveLinkClass(link)}`}
+                className={loadActiveLinkClass(link)}
               >
                 {link.label}
               </Link>
@@ -50,7 +41,7 @@ export function CustomHeader({
         </ul>
         <div className="relative cursor-pointer">
           <div className="absolute -top-2 -right-2 bg-purple-950 text-amber-100 rounded-full w-5 h-5 flex items-center justify-center text-xs">1</div>
-          <MdOutlineShoppingCart size={40} className="font-light" ></MdOutlineShoppingCart>
+          <MdOutlineShoppingCart size={40} className="font-light" />
         </div>
       </nav>
     </header>
