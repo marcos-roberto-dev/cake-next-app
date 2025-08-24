@@ -29,7 +29,7 @@ export function CustomHeader({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className={`bg-red-100 w-full text-purple-800 relative py-4 px-4 text-center md:text-start  `}
+    <header className={`bg-red-100 w-full text-purple-800 py-4 px-4 text-center md:text-start sticky top-0 z-50`}
     >
       <nav className="flex justify-between max-w-[1360px] mx-auto items-center">
         {/* Menu desktop */}
