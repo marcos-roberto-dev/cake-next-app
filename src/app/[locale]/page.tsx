@@ -21,7 +21,9 @@ export async function generateMetadata(
 }
 
 async function getProducts(locale: string = 'pt-br'): Promise<Product[]> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
   const responseData = await (await fetch(`${baseUrl}/${locale}/api/products`, { cache: "no-store" })).json();
   return responseData;
 }
