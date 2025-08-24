@@ -2,6 +2,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const links = [
   { path: '/', label: 'Shop' },
@@ -24,10 +26,13 @@ export function CustomHeader({
     return cleanPathname === link.path ? 'font-bold' : '';
   }
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="bg-red-100 py-4 px-4 md:px-[126px] font-lato text-lg text-purple-800">
-      <nav className="flex justify-between max-w-[1360px] mx-auto">
-        <ul className="flex space-x-4">
+      <nav className="flex justify-between max-w-[1360px] mx-auto items-center">
+        {/* Menu desktop */}
+        <ul className="hidden md:flex space-x-4">
           {links.map((link) => (
             <li key={link.path}>
               <Link
@@ -39,11 +44,44 @@ export function CustomHeader({
             </li>
           ))}
         </ul>
+        {/* Menu hambúrguer mobile */}
+        <button
+          className="md:hidden p-2 text-purple-800 cursor-pointer"
+          aria-label="Abrir menu"
+          onClick={() => setMenuOpen(true)}
+        >
+          <FiMenu size={32} />
+        </button>
         <div className="relative cursor-pointer">
           <div className="absolute -top-2 -right-2 bg-purple-950 text-amber-100 rounded-full w-5 h-5 flex items-center justify-center text-xs">1</div>
           <MdOutlineShoppingCart size={40} className="font-light" />
         </div>
       </nav>
+      {/* Menu tela cheia */}
+      {menuOpen && (
+        <div className="fixed inset-0 bg-red-100 z-50 flex flex-col items-center justify-center text-3xl font-bold text-purple-800">
+          <button
+            className="absolute top-6 right-6 p-2 text-purple-800 cursor-pointer"
+            aria-label="Fechar menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            <FiX size={40} />
+          </button>
+          <ul className="space-y-8">
+            {links.map((link) => (
+              <li key={link.path}>
+                <Link
+                  href={`/${params.locale}${link.path}`}
+                  className="hover:underline"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
