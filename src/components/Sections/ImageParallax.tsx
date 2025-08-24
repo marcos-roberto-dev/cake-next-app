@@ -7,7 +7,9 @@ interface ImageParallaxProps {
   src: string;
   alt: string;
   width: number;
+  minWidth?: number;
   height: number;
+  minHeight?: number;
   style?: React.CSSProperties;
   parallaxOptions?: {
     factorX: number;
@@ -15,12 +17,12 @@ interface ImageParallaxProps {
   };
 }
 
-export function ImageParallax({ src, alt, width, height, style, parallaxOptions }: ImageParallaxProps) {
+export function ImageParallax({ src, alt, width,minWidth, height, minHeight, style, parallaxOptions }: ImageParallaxProps) {
   return (
     <>
       <MouseParallaxChild factorX={parallaxOptions?.factorX} factorY={parallaxOptions?.factorY}>
         <Image
-          style={{ top: -40, left: 50, zIndex: 2, ...style }}
+          style={{ top: -40, left: 50, zIndex: 2, minHeight, minWidth, ...style }}
           src={src}
           alt={alt}
           width={width}

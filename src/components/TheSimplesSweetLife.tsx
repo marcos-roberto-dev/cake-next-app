@@ -12,6 +12,8 @@ export function TheSimpleSweetLife() {
             src={'/choco-cake-top.png'}
             alt="Cupcake de chocolate"
             width={240}
+            minWidth={240}
+            minHeight={140}
             height={30}
             parallaxOptions={
               {
@@ -24,6 +26,8 @@ export function TheSimpleSweetLife() {
             src={'/choco-cake-body.png'}
             alt="Cupcake de morango com chocolate branco"
             width={253}
+            minWidth={253}
+            minHeight={140}
             height={396} parallaxOptions={{
               factorX: 0,
               factorY: 0.1
