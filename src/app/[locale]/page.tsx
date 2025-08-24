@@ -21,6 +21,7 @@ export async function generateMetadata(
 }
 
 async function getProducts(locale: string = 'pt-br'): Promise<Product[]> {
+  // Agora o MSW intercepta as requisições em qualquer ambiente
   const baseUrl = process.env.VERCEL_URL 
     ? `https://${process.env.VERCEL_URL}` 
     : 'http://localhost:3000';
