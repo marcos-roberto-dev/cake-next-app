@@ -35,7 +35,7 @@ export function InputProductCard({ onQuantityChange }: InputProductCardProps) {
   }, [quantity])
 
   return <>
-    <div className="flex items-center gap-2 border border-purple-800 rounded-lg">
+    <div className="flex items-center justify-between gap-2 border border-purple-800 rounded-lg">
       <button onClick={handleRemoveQuantity} className="cursor-pointer px-2 leading-none h-full  text-purple-800  flex items-center justify-center font-bold text-lg ">-</button>
       <input
         className="font-bold text-purple-800 text-lg w-10 h-8 text-center appearance-none"

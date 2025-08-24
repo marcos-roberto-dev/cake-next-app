@@ -10,7 +10,7 @@ interface CustomSectionProps {
 export function CustomSection({ bg = colors.white, style, children, className, ref }: CustomSectionProps){
   return <>
     <section
-      className={`w-full text-purple-800 relative py-8 px-4 text-center md:text-start md:py-[80px] md:px-[126px]`}
+      className={`w-full text-purple-800 relative py-8 px-4 text-center md:text-start md:py-[80px] md:px-[minmax(126px,_1fr)]`}
       style={{ backgroundColor: bg, ...style }}
 
     >
