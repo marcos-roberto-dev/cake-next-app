@@ -21,18 +21,16 @@ export async function generateMetadata(
 }
 
 async function getProducts(locale: string = 'pt-br'): Promise<Product[]> {
-  console.log("process.env.", process.env)
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+  const baseUrl = process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'http://localhost:3000';
+    
   const res = await fetch(`${baseUrl}/${locale}/api/products`, { cache: "no-store" });
 
   if (!res.ok) {
-    // Pode logar ou lançar erro customizado
     throw new Error(`Failed to fetch products: ${res.status} ${res.statusText}`);
   }
 
-  // Tenta garantir que o conteúdo é JSON
   const contentType = res.headers.get("content-type");
   if (!contentType || !contentType.includes("application/json")) {
     throw new Error("Response is not JSON");
