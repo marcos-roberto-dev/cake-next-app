@@ -8,9 +8,7 @@ interface ProductCard {
 
 export function ProductCard({ product }: ProductCard) {
   return (
-    <div
-      className="flex flex-col justify-between items-center h-[500px] w-[353px] p-6 mb-8"
-    >
+ <div className="flex flex-col justify-between items-center min-w-[240px] w-[300px] h-[500px] p-6 mb-8">
       <Image src={product.image} alt={product.name} width={218} height={244} style={{ minWidth: 218, minHeight: 244 }} className="mb-4 rounded-xl" />
         <div className="w-full text-center mb-4 flex-1 flex flex-col justify-end">
           <h3 className="text-2xl font-wendy text-purple-800 mb-2">{product.name}</h3>

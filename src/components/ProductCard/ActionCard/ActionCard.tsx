@@ -18,7 +18,7 @@ export function ActionCard({ product }: ActionCardProps) {
     console.log(productToShoppingCart)
   }
   return (
-    <div className="w-full justify-center flex gap-4">
+<div className="flex flex-wrap gap-2 w-full justify-center mt-4">
       <InputProductCard onQuantityChange={handleSetQuantity}></InputProductCard>
       <button onClick={handleAddToShoppingCart} className="bg-purple-800 min-w-[150px] text-amber-100 text-sm font-bold h-[42px] px-6 rounded-lg uppercase tracking-wide hover:bg-purple-900 transition">Add to Cart</button>
     </div>
