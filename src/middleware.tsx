@@ -1,7 +1,10 @@
+
 import { NextRequest, NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|images).*)"],
+  matcher: [
+    "/((?!_next|favicon.ico|images|public).*)"
+  ],
 };
 
 
