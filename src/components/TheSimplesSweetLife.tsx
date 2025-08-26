@@ -1,6 +1,7 @@
 import { ImageParallax } from "./Sections/ImageParallax";
 import { SectionContainerParallax } from "./Sections/SectionContainerParallax";
 import colors from "tailwindcss/colors";
+import { TextLanguage } from "./TextLanguage";
 
 export function TheSimpleSweetLife() {
   return (
@@ -37,10 +38,12 @@ export function TheSimpleSweetLife() {
 
       <div>
         <div>
-          <h2 className="text-7xl font-wendy">The Simple,<br />Sweet Life</h2>
-          <p className="text-lg font-lato mt-8">Our cupcakes are always made with the finest ingredients, creating a spark that makes your taste buds dance. You’ll want to indulge in each and every decadent flavor.</p>
+          <TextLanguage i18nKey="TheSimpleSweetLife.title" tag={'h2'}  className="text-7xl font-wendy"></TextLanguage>
+          <TextLanguage i18nKey="TheSimpleSweetLife.description" tag={'p'}  className="text-lg font-lato mt-8"></TextLanguage>
         </div>
-        <button className=" cursor-pointer transition hover:opacity-80 uppercase mt-8 bg-purple-800 text-amber-100  py-2 px-4 rounded max-w-[206px] w-full h-[43px]">Shop now</button>
+        <button className=" cursor-pointer transition hover:opacity-80 uppercase mt-8 bg-purple-800 text-amber-100  py-2 px-4 rounded max-w-[206px] w-full h-[43px]">
+          <TextLanguage i18nKey="General.CTA"></TextLanguage>
+        </button>
       </div>
     </SectionContainerParallax>
   );

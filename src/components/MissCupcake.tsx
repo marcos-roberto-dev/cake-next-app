@@ -1,16 +1,19 @@
 import { ImageParallax } from "./Sections/ImageParallax";
 import { SectionContainerParallax } from "./Sections/SectionContainerParallax";
 import colors from "tailwindcss/colors";
+import { TextLanguage } from "./TextLanguage";
 
 export function MissCupcake() {
   return (
     <SectionContainerParallax bg={colors.red[100]}>
       <div>
         <div>
-          <h2 className="text-7xl font-wendy">Miss <br /> cupcake</h2>
-          <p className="text-lg font-lato mt-8">We are proud to offer cupcakes and cakes that are freshly baked within hours, if not minutes, for your enjoyment.</p>
+          <TextLanguage i18nKey="MissCupcakeSection.title" tag={'h2'}  className="text-7xl font-wendy"></TextLanguage>
+          <TextLanguage i18nKey="MissCupcakeSection.description" tag={'p'}  className="text-lg font-lato mt-8"></TextLanguage>
         </div>
-        <button className="cursor-pointer transition hover:opacity-80 uppercase mt-8 bg-purple-800 text-amber-100 py-2 px-4 rounded max-w-[206px] w-full h-[43px]">Shop now</button>
+        <button className="cursor-pointer transition hover:opacity-80 uppercase mt-8 bg-purple-800 text-amber-100 py-2 px-4 rounded max-w-[206px] w-full h-[43px]">
+          <TextLanguage i18nKey="General.CTA"></TextLanguage>
+        </button>
       </div>
 
       <div className="w-full  sm:p-[48px]">

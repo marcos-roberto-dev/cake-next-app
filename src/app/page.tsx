@@ -2,5 +2,5 @@ import { redirect } from "next/navigation";
 
 export default function App() {
 
-  return redirect('pt-BR')
+  return redirect('pt-br')
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato, Wendy_One } from "next/font/google";
 import "./globals.css";
 import '../setupMSW';
+import '../i18n'
 
 const lato = Lato({
   subsets: ["latin"],
