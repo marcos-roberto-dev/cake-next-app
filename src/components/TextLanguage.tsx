@@ -4,7 +4,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 interface TextLanguageProps {
   i18nKey: string,
-  tag?: React.ElementType<any>
+  tag?: React.ElementType
   className?: string
 }
 
